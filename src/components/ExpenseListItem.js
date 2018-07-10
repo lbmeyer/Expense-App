@@ -1,19 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { removeExpense } from '../actions/expenses';
+import { Link } from 'react-router-dom';
 
 
-const ExpenseListItem = ({replaceReducer, dispatch, getState, id, description, amount, createdAt }) => (
+const ExpenseListItem = ({ id, description, amount, createdAt }) => (
   <div>
-    <h3>{description}</h3>
+    <h3><Link to={`/edit/${id}`}>{description}</Link></h3>
     <p>{amount} - {createdAt}</p>
-    <button onClick={(e) => {
-      dispatch(removeExpense({id}));
-      // console.log(dispatch);
-    }} >Remove</button>
   </div>
 );
 
 // we don't need to pass in mapStateToProps since we don't need
 // to access state and only need the dispatch function
-export default connect()(ExpenseListItem);
+export default ExpenseListItem;
