@@ -1,0 +1,22 @@
+html {
+  // base 10 system for rems
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  font-family: Helvetica, Arial, Helvetica, sans-serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.is-active {
+  font-weight: bold;
+}
